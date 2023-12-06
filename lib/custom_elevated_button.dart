@@ -22,7 +22,10 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
     );
 
     return ElevatedButton(
-      child: Text('Entrar'),
+      child: Text(
+        'Entrar',
+        style: TextStyle(color: Colors.white),
+      ),
       style: style,
       onPressed: () {},
     );
