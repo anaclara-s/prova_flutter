@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'constants.dart';
+import 'custom_align.dart';
 import 'custom_elevated_button.dart';
 import 'custom_text_form_field.dart';
 import 'information_capture_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-
-  final Uri _url = Uri.parse('https://www.google.com.br');
 
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _userController = TextEditingController();
@@ -77,6 +75,7 @@ class LoginScreen extends StatelessWidget {
                         return null;
                       },
                     ),
+                    const SizedBox(height: 20),
                     CustomElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
@@ -93,29 +92,14 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: GestureDetector(
-                    onDoubleTap: _launchURL,
-                    child: const Text(
-                      'Política de Privacidade',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
+              const Padding(
+                padding: EdgeInsets.all(20),
+                child: CustomAlign(),
               ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<void> _launchURL() async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
-    }
   }
 }
