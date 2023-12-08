@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
-import 'custom_align.dart';
-import 'custom_elevated_button.dart';
-import 'custom_text_form_field.dart';
+import '../constants.dart';
+import '../custom/custom_align.dart';
+import '../custom/custom_elevated_button.dart';
+import '../custom/custom_text_form_field.dart';
 import 'information_capture_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool isPasswordValid = true;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +48,7 @@ class LoginScreen extends StatelessWidget {
                       controller: _userController,
                       maxLength: 20,
                       keyboardType: TextInputType.text,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       prefixIcon: const Icon(Icons.person,
                           color: kLoginScreenIconColor),
                       validator: (value) {
@@ -58,8 +65,14 @@ class LoginScreen extends StatelessWidget {
                       controller: _passwordController,
                       maxLength: 20,
                       keyboardType: TextInputType.text,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       prefixIcon:
                           const Icon(Icons.lock, color: kLoginScreenIconColor),
+                      onChanged: (value) {
+                        setState(() {
+                          isPasswordValid = (value.length <= 2);
+                        });
+                      },
                       validator: (value) {
                         String trimmedValue = value!.trim();
                         print('Senha após trim:$trimmedValue');

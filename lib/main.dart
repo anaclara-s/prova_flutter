@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'login_screen.dart';
+import 'screen/login_screen.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: LoginScreen(),
     ),
   );
