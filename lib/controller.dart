@@ -1,28 +1,28 @@
-import 'package:mobx/mobx.dart';
+// import 'package:mobx/mobx.dart';
 
-part 'controller.g.dart';
+// part 'controller.g.dart';
 
-class TaskController = _TaskController with _$TaskController;
+// class TaskController = _TaskController with _$TaskController;
 
-abstract class _TaskController with Store {
-  @observable
-  ObservableList<String> tasks = ObservableList<String>();
+// abstract class _TaskController with Store {
+//   @observable
+//   ObservableList<String> tasks = ObservableList<String>();
 
-  @observable
-  String textFormFieldValue = '';
+//   @observable
+//   String textFormFieldValue = '';
 
-  @action
-  void updateTextFormFieldValue(String value) {
-    textFormFieldValue = value;
-  }
+//   @action
+//   void updateTextFormFieldValue(String value) {
+//     textFormFieldValue = value;
+//   }
 
-  @action
-  void addTask(String task) {
-    tasks.add(task);
-  }
+//   @action
+//   void addTask(String task) {
+//     tasks.add(task);
+//   }
 
-  @action
-  void removeTask(String task) {
-    tasks.remove(task);
-  }
-}
+//   @action
+//   void removeTask(String task) {
+//     tasks.remove(task);
+//   }
+// }

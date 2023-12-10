@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'screen/login_screen.dart';
+import 'pages/login_page.dart';
+import 'shared/repositories/shared_preferences_repository.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferencesRepository.init();
+
   runApp(
     const MaterialApp(
-      home: LoginScreen(),
+      home: LoginPage(),
     ),
   );
 }

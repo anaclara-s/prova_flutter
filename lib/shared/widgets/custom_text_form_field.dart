@@ -14,9 +14,10 @@ class CustomTextFormField extends StatefulWidget {
   final void Function(String)? onFieldSubmitted;
   final AutovalidateMode? autovalidateMode;
   final bool? autofocus;
-  final Widget? label;
-  final TextStyle? labelStyle;
   final FocusNode? focusNode;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final TextAlign? textAlign;
   final void Function(String)? onChanged;
 
   const CustomTextFormField({
@@ -31,10 +32,11 @@ class CustomTextFormField extends StatefulWidget {
     this.onFieldSubmitted,
     this.autovalidateMode,
     this.autofocus,
-    this.label,
-    this.labelStyle,
     this.focusNode,
+    this.hintText,
+    this.hintStyle,
     this.onChanged,
+    this.textAlign,
   }) : super(key: key);
 
   @override
@@ -65,9 +67,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           controller: widget.controller,
           maxLength: widget.maxLength,
           keyboardType: widget.keyboardType,
+          textAlign: widget.textAlign ?? TextAlign.start,
           decoration: InputDecoration(
-            label: widget.label,
-            labelStyle: widget.labelStyle,
+            hintText: widget.hintText,
+            hintStyle: widget.hintStyle,
             prefixIcon: widget.prefixIcon,
             filled: true,
             fillColor: Colors.white,

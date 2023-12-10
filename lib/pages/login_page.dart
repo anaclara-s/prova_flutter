@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../custom/custom_align.dart';
-import '../custom/custom_elevated_button.dart';
-import '../custom/custom_text_form_field.dart';
-import 'information_capture_screen.dart';
+import '../shared/constants.dart';
+import '../shared/widgets/custom_align.dart';
+import '../shared/widgets/custom_elevated_button.dart';
+import '../shared/widgets/custom_text_form_field.dart';
+import 'todo_page/todo_page.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -53,7 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: kLoginScreenIconColor),
                       validator: (value) {
                         String trimmedValue = value!.trim();
-                        print('Usuário após trim:$trimmedValue');
                         if (trimmedValue.isEmpty) {
                           return 'Por favor insira o usuário';
                         }
@@ -75,7 +74,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       validator: (value) {
                         String trimmedValue = value!.trim();
-                        print('Senha após trim:$trimmedValue');
                         if (trimmedValue.isEmpty) {
                           return 'Por favor insira a senha';
                         }
@@ -95,8 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  const InformationCaptureScreen(),
+                              builder: (context) => const TodoPage(),
                             ),
                           );
                         }
