@@ -9,7 +9,7 @@ Este projeto é uma simples e eficiente tela de login com uma funcionalidade de 
 
 | Imagem 1 | Imagem 2 | Imagem 3 | Imagem 4 |
 |:---:|:---:|:---:|:---:|
-| ![Imagem 1](assets/images/print_loginPage.jpg) | ![Imagem 2](assets/images/print_loginPage_erros.jpg) | ![Imagem 3](assets/images/print_loginPage_erroSenhaInsu.jpg) | ![Imagem 4](assets/images/print_loginPage_erroSenhaCaracterEsp.jpg) |
+| ![Imagem 1](assets/images/print_loginPage.png) | ![Imagem 2](assets/images/print_loginPage_erros.png) | ![Imagem 3](assets/images/print_loginPage_erroSenhaInsu.png) | ![Imagem 4](assets/images/print_loginPage_erroSenhaCaracterEsp.png) |
 </div>
 
 Um “CustomTextFormField” representa o Login:
@@ -35,7 +35,7 @@ Com ambas (Usuário e Senha) as informações preenchidas e estando dentro dos r
 
 | Imagem 1 | Imagem 2 | Imagem 3 | Imagem 4 |
 |:---:|:---:|:---:|:---:|
-| ![Imagem 1](assets/images/print_todoPage.jpg) | ![Imagem 2](assets/images/print_todoPage_erroPreenchimento.jpg) | ![Imagem 3](assets/images/print_todoPage_excluir.jpg) | ![Imagem 4](assets/images/print_todoPage_edicao.jpg) |
+| ![Imagem 1](assets/images/print_todoPage.png) | ![Imagem 2](assets/images/print_todoPage_erroPreenchimento.png) | ![Imagem 3](assets/images/print_todoPage_excluir.png) | ![Imagem 4](assets/images/print_todoPage_edicao.png) |
 
 </div>
 
